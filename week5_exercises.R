@@ -17,9 +17,13 @@ mean_rm_na <- function(x) {
   mean(x, na.rm = TRUE)
 }
 
-coeff_var <- function(x) {
-  ((sd_rm_na(x) / mean_rm_na(x)) * 100)
-} round(x)
+# my attempt
+#coeff_var <- function(x) {
+ # ((sd_rm_na(x) / mean_rm_na(x)) * 100)
+#} round(x)
+
+# the answer
+cv <- function(x, digits = 0) round(sd(x, na.rm = T)/mean(x, na.rm = T)*100, digits)
 
 # Using across, find the coefficient of variation for all numeric variables except year
 # rounded to 2 decimals
